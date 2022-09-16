@@ -1,0 +1,14 @@
+.container
+  .row.justify-content-start
+    .col-sm-12
+      =link_to('Back', articles_path, class: 'btn btn-secondary')
+
+.container.mt-5
+  .row.justify-content-start
+    .col-sm-2
+    .col-sm-10
+      %h1= @article.title
+      %h4.mt-5.fst-italic= @article.author
+      %h5.mt-5= @article.body
+      %h5.mt-5 Votes: #{@article.votes || 0}
+      

@@ -1,0 +1,23 @@
+
+.container
+  .row.justify-content-start
+    .col-sm-12
+      =link_to('Back', articles_path, class: 'btn btn-secondary')
+      
+.container.mt-5
+  .row.justify-content-start
+    .col-sm-12
+      = form_with(model: @article) do |f|
+        .card
+          .card-body
+            .mb-3
+              = f.label :author, { class: "form-label"}
+              = f.text_field :author, { class: "form-control", placeholder: "Author" }
+            .mb-3
+              = f.label :title, { class: "form-label"}
+              = f.text_field :title, { class: "form-control", placeholder: "Title" }
+            .mb-3
+              = f.label :body, { class: "form-label"}
+              = f.text_area :body, { class: "form-control", placeholder: "Content" }
+
+            = f.submit "Submit", class: "btn btn-primary"

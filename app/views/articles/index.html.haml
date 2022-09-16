@@ -1,0 +1,19 @@
+
+
+.container.text-center
+  .row.justify-content-start
+    .col-sm-12
+      %h1 Here will be articles #{link_to('Add', new_article_path, class: 'btn btn-secondary')}
+
+
+.container.mt-5
+  .row.justify-content-start
+    -@articles.each do |article|
+      .card.m-3{:style => "width: 18rem;"}
+        .card-body
+          %h5.card-title= article.title
+          %h5.card-text.fst-italic= article.author
+          %p.card-text.text-truncate= article.body
+          %a.btn.btn-primary{:href => article_path(article)} View Article
+
+
